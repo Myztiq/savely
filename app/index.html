@@ -11,13 +11,15 @@
 
     <link rel="stylesheet" href="assets/vendor.css">
     <link rel="stylesheet" href="assets/savely.css">
-  </head>
+
   <body>
     <script src="assets/vendor.js"></script>
     <script src="assets/savely.js"></script>
+    <script src="/kinvey.js"></script>
     <script>
       window.SavelyENV = require('savely/config/environment')['default'];
       window.EmberENV = window.SavelyENV.EmberENV;
+      window.ENV = window.SavelyENV;
       window.Savely = require('savely/app')['default'].create(SavelyENV.APP);
     </script>
   </body>

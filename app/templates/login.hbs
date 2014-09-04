@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-sm-4">
+    {{#if error}}
+      {{error}}
+    {{/if}}
+
+    <form {{action 'login' on='submit'}}>
+      <div class="form-group">
+        {{input type="email" value=email placeholder="ryan@example.com" class="form-control"}}
+      </div>
+      <div class="form-group">
+        {{input type="password" value=password placeholder="password" class="form-control"}}
+        <p>{{#link-to 'forgot-password'}}Forgot password{{/link-to}}</p>
+      </div>
+      <div class="form-group">
+        {{input type="submit" value="Login" class="btn btn-primary" disabled=isProcessing}}
+      </div>
+    </form>
+  </div>
+</div>
+<p>Don't have an account? {{#link-to 'register'}}Register{{/link-to}}</p>
