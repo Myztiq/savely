@@ -7,6 +7,7 @@ Initializer =
     Kinvey.init container, application,
       appKey: "kid_WyUQ0yNTz"
       appSecret: "f7498e806a2646f4b9f6e67d7ac7eb49"
+      userType: 'user'
 
     application.inject 'controller', 'activeUser', 'user:active'
     application.inject 'router', 'activeUser', 'user:active'

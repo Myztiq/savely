@@ -1,0 +1,41 @@
+<p>Our records show you are part of the Orion Corporation. They provide matching on 401k contributions up to $3,000 a year.</p>
+
+
+<div class="row">
+  <div class="col-sm-6 col-sm-push-3">
+    <div class="block">
+      <div class="block-title">Salary</div>
+      <div class="block-body">
+        <div class="text-center">
+          <div class="number">{{activeUser.salary}}</div>
+          Bi-monthly salary
+        </div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-title">401k Contributions</div>
+      <div class="block-body">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="input-group">
+              {{input type="number" value=percentContribution class="form-control" placeholder="2"}}
+              <span class="input-group-addon">%</span>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="input-group">
+              <span class="input-group-addon">$</span>
+              {{input type="number" value=dollarContribution class="form-control" placeholder=placeholderDollar}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pull-right">
+      <div class="btn btn-success" {{action 'save'}}>Save</div>
+    </div>
+
+  </div>
+</div>

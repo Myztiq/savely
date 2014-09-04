@@ -1,4 +1,5 @@
 User = Kinvey.User.extend
-  username: DS.attr('string')
+  setup: DS.attr('boolean')
+  salary: '5000'
 
 `export default User`

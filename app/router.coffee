@@ -9,4 +9,7 @@ Router.map ->
   @route 'logout'
   @route 'forgot-password'
 
+  @route 'setup/401k'
+  @route 'setup/goals'
+
 `export default Router`

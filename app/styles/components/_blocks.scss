@@ -1,0 +1,20 @@
+.block{
+  border-radius: 10px;
+  background-color: #CBE86B;
+  margin: 10px 0px;
+  .block-title{
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+    width: 100%;
+    padding: 5px 10px;
+    background-color: rgba(0,0,0,.2);
+    color: #1C140D;
+    font-size: 1.4em;
+  }
+  .block-body{
+    padding: 20px;
+    .number{
+      font-size: 3em;
+    }
+  }
+}
