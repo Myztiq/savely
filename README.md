@@ -1,8 +1,8 @@
 # Savely
 
-This README outlines the details of collaborating on this Ember application.
+![Status](https://travis-ci.org/Myztiq/savely.svg)
 
-A short introduction of this app could easily go here.
+Savely is WIP. Please ignore for the time being.
 
 ## Prerequisites
 

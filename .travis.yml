@@ -1,16 +1,19 @@
----
 language: node_js
-
 sudo: false
-
 cache:
   directories:
-    - node_modules
-
+  - node_modules
 install:
-  - npm install -g bower
-  - npm install
-  - bower install
-
+- npm install -g bower
+- npm install
+- bower install
 script:
-  - npm test
+- npm test
+deploy:
+  provider: heroku
+  app: savely
+  api_key:
+    secure: WNBco53UZuyeseDz4NtOkqNDVMgd/ydaJrSsD83y69M8ZI4r4mJs05Clxa1OmDCUMJzkBhy0NLQIlA4PrU0SbQ9kdPJUw8JiZnFNMpv3/TBaQZ0KaEOly5m92bzEWlBVbFZVY7GGESGcJq5PmGhCXELnkRR8WbTxHcHI34UarkQ=
+  app: savely
+  on:
+    repo: Myztiq/savely
