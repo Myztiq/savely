@@ -1,5 +1,11 @@
 `import Ember from 'ember'`
 
+Child = Ember.Object.extend
+
+  hasSaved: (->
+    @get('saved') > 0
+  ).property 'saved'
+
 Controller = Ember.ObjectController.extend
   canContinue: false
   children: []
@@ -24,6 +30,6 @@ Controller = Ember.ObjectController.extend
 
   actions:
     addChild: ->
-      @get('children').addObject(Ember.Object.create())
+      @get('children').addObject(new Child())
 
 `export default Controller`
