@@ -3,40 +3,12 @@
 </p>
 
 <form {{action 'save' on='submit'}}>
-  <div class="form-group">
-    {{input type="checkbox"}} <label>A new car</label>
-  </div>
-  <div class="form-group">
-    {{input type="checkbox"}} <label>A wedding fund</label>
-  </div>
-  <div class="form-group">
-    {{input type="checkbox"}} <label>New home purchase</label>
-  </div>
-  <div class="form-group">
-    {{input type="checkbox"}} <label>Saving for a move to a new apartment</label>
-  </div>
-  <div class="form-group">
-    {{input type="checkbox"}} <label>Saving for a college education</label>
-  </div>
-  <div class="form-group">
-    {{input type="checkbox"}} <label>Saving for a big vacation</label>
-  </div>
-  <div class="form-group">
-    {{input type="checkbox"}} <label>Saving for a new baby</label>
-  </div>
-  <div class="form-group">
-    {{input type="checkbox"}} <label>Saving for a big one-time gift or purchase</label>
-  </div>
-  <div class="form-group">
-    {{input type="checkbox"}} <label>Saving money to pass on to younger generations</label>
-  </div>
-  <div class="form-group">
-    {{input type="checkbox"}} <label>Build wealth</label>
-  </div>
-  <div class="form-group">
-    {{input type="checkbox"}} <label>Other goal(s)</label>
-  </div>
-
-  {{#link-to 'setup/401k'}}<div class="btn btn-default">Back to 401k setup</div>{{/link-to}}
+  {{#each}}
+    <label>
+      {{input type="checkbox" checked=enabled disabled=disabled}}
+      {{label}}
+    </label>
+    <br/>
+  {{/each}}
   {{input type="submit" class="btn btn-success" value="Continue..."}}
 </form>

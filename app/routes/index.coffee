@@ -3,7 +3,7 @@
 Route = Ember.Route.extend
   beforeModel: ->
     unless @get('currentUser.setup')
-      @transitionTo 'setup/401k'
+      @transitionTo 'setup/identity'
 
 
 `export default Route`

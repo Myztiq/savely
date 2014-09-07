@@ -1,0 +1,20 @@
+<h2>{{label}}</h2>
+
+<p>Let's get you setup for retirement.</p>
+
+<form>
+
+  <div class="form-group">
+    <label>How much money have you saved for retirement?</label>
+    {{input type="number" class="form-control" placeholder="0"}}
+    <span class="help-block">We will use this to help you figure out how much you should be contributing on a regular basis.</span>
+  </div>
+
+  <div class="form-group">
+    <label>At what age do you plan to retire?</label>
+    {{input type="number" class="form-control" placeholder="65" value="65"}}
+    <span class="help-block">The current average retirement age is 65.</span>
+  </div>
+
+  <div class="btn btn-success" {{action 'save'}}>Continue...</div>
+</form>

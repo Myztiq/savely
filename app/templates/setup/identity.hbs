@@ -1,0 +1,11 @@
+<h2>Identity Verification</h2>
+
+<form {{action 'save' on='submit'}}>
+  <div {{bind-attr class=":form-group invalid:has-error"}}>
+    {{input type='text' value=social placeholder='Last 4 Digits of Social' required=true class="form-control"}}
+    <span class="help-block">We take security seriously, we need your social security number to verify your account information.</span>
+  </div>
+
+
+  {{input type='submit' value=view.searchText class='btn btn-success' disabled=searching}}
+</form>

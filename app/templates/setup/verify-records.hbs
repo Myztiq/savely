@@ -1,0 +1,20 @@
+<h2>Identity Confirmation</h2>
+
+<p>Your employer, Big Co. has released the following information. Please verify it is all correct.</p>
+
+<dl>
+  <dt>Name</dt>
+  <dd>Ryan Kahn</dd>
+  <dt>Yearly Salary</dt>
+  <dd>5000</dd>
+  <dt>Birthday</dt>
+  <dd>April 3rd 1723</dd>
+</dl>
+
+{{#if incorrectInformation}}
+  <p>Please call our account setup representatives at <a href="tel:+1-414-555-2525">(414) 555-2525</a></p>
+{{else}}
+  <div class="btn btn-danger" {{action 'incorrectInfo'}}>This information is incorrect</div>
+  {{#link-to 'setup/goals'}}<div class="btn btn-success">This information is correct</div>{{/link-to}}
+{{/if}}
+

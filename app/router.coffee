@@ -9,7 +9,12 @@ Router.map ->
   @route 'logout'
   @route 'forgot-password'
 
-  @route 'setup/401k'
+  @route 'setup/identity'
+  @route 'setup/verify-records'
   @route 'setup/goals'
+
+  @resource 'goal', {path: 'setup/goals/:goal_id'}
+
+  @route 'dashboard'
 
 `export default Router`
