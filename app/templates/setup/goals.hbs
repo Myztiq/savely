@@ -3,6 +3,8 @@
 </p>
 
 <form {{action 'save' on='submit'}}>
+  What would you like to save for?
+  <br/>
   {{#each}}
     <label>
       {{input type="checkbox" checked=enabled disabled=disabled}}

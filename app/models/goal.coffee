@@ -7,15 +7,15 @@ Goals = DS.Model.extend
 
 Goals.reopenClass
   FIXTURES: [
-    {id: 'retirement', label: 'Saving for Retirement', disabled: true, enabled: true}
-    {id: 'car', label: 'Saving for a new car'}
-    {id: 'wedding', label: 'Saving for a wedding fund'}
-    {id: 'home', label: 'Saving for a new home purchase'}
-    {id: 'move', label: 'Saving for a move to a new apartment'}
-    {id: 'college', label: 'Saving for a college education'}
-    {id: 'vacation', label: 'Saving for a big vacation'}
-    {id: 'baby', label: 'Saving for a new baby'}
-    {id: 'gift', label: 'Saving for a big one-time gift or purchase'}
+    {id: 'retirement', label: 'Retirement', disabled: true, enabled: true}
+    {id: 'car', label: 'New car'}
+    {id: 'wedding', label: 'Wedding fund'}
+    {id: 'home', label: 'New home purchase'}
+    {id: 'move', label: 'Move to a new apartment'}
+    {id: 'college', label: 'College education'}
+    {id: 'vacation', label: 'Big vacation'}
+    {id: 'baby', label: 'New baby'}
+    {id: 'gift', label: 'Big one-time gift or purchase'}
     {id: 'endowment', label: 'Saving money to pass on to younger generations'}
     {id: 'wealth', label: 'Build wealth'}
     {id: 'other', label: 'Other goal(s)'}

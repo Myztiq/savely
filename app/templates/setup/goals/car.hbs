@@ -3,8 +3,6 @@
 <p>Get that new car quicker.</p>
 
 <form>
-
-
   <div class="form-group">
     <label>When do you plan on buying a new car?</label>
 
@@ -51,13 +49,40 @@
 
   <div class="form-group">
     <label>How much money do you expect you’ll need?</label>
-    {{input type="number" class="form-control" placeholder="3000" value=purchasePrice}}
-    <span class="help-block">We recommend a 10-20% down payment. The average down payment is $3,000.</span>
+    <div class="radio">
+      <label>
+        {{radio-button value='dontKnow' checked=paymentType}}
+        I’m not sure how much I’ll need, I just know I need to start saving
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+        {{radio-button value='calculate' checked=paymentType}}
+        I know the cost of the car, help me calculate my down payment
+      </label>
+    </div>
+    {{#if calculateDownPayment}}
+      {{currency-input class="form-control" placeholder="Cost of the car" unformatted=carCost}}
+      {{#if goalAmount}}
+        <div class="help-block">
+          We recommend a 10-20% down payment. We are setting your goal to {{format-money goalAmount}}
+        </div>
+      {{/if}}
+    {{/if}}
+    <div class="radio">
+      <label>
+        {{radio-button value='knownValue' checked=paymentType}}
+        Enter specific value
+      </label>
+    </div>
+    {{#if knownValue}}
+      {{currency-input class="form-control" placeholder="Savings Goal" unformatted=goalAmount}}
+    {{/if}}
   </div>
 
   <div class="form-group">
     <label>How much have you saved for this goal already?</label>
-    {{input type="number" class="form-control" placeholder="200" value=savings}}
+    {{currency-input class="form-control" placeholder="amount saved" unformatted=savings}}
   </div>
 
   <div class="form-group">

@@ -1,10 +1,11 @@
 <div class="navbar">
   <div class="container">
     <h1 id='title'>
-      Savely
-      <small>Where the little things matter.</small>
+      Dream Forward
+      <small>It's not a workplace benefit it's a life benefit</small>
       {{#if session.isAuthenticated}}
         <div class="pull-right">
+          <div class="btn btn-link" {{action 'invalidateSession'}}>Save for later</div>
           <div class="btn btn-link" {{action 'invalidateSession'}}>Logout</div>
         </div>
       {{/if}}
