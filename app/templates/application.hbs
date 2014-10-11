@@ -1,13 +1,17 @@
-<div class="container">
-  <h1 id='title'>
-    Savely
-    <small>Where the little things matter.</small>
-    {{#if session.isAuthenticated}}
-      <div class="pull-right">
-        <div class="btn btn-default" {{action 'invalidateSession'}}>Logout</div>
-      </div>
-    {{/if}}
-  </h1>
+<div class="navbar">
+  <div class="container">
+    <h1 id='title'>
+      Savely
+      <small>Where the little things matter.</small>
+      {{#if session.isAuthenticated}}
+        <div class="pull-right">
+          <div class="btn btn-link" {{action 'invalidateSession'}}>Logout</div>
+        </div>
+      {{/if}}
+    </h1>
+  </div>
+</div>
 
+<div class="container" id="body-wrapper">
   {{outlet}}
 </div>
