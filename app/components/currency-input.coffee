@@ -5,7 +5,10 @@ currencyInput = Ember.TextField.extend
     if value?
       @set 'unformatted', accounting.unformat value
 
-    accounting.formatMoney @get('unformatted'), precision: 0
+    if @get('unformatted')
+      accounting.formatMoney @get('unformatted'), precision: 0
+    else
+      return
   ).property()
 
 `export default currencyInput`
