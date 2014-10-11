@@ -2,50 +2,86 @@
 
 <form>
 
-  {{#if children}}
+  <div class="form-group">
+    <label>Name</label>
+    {{input type="text" placeholder="What is the name of your child?" value=name class="form-control"}}
+  </div>
+  {{#if name}}
+    <div class="form-group">
+      <label>How old is {{name}}</label>
+      {{input type="number" placeholder="Age" value=age class="form-control"}}
+    </div>
+    <div class="form-group">
+      <label>How much have you saved for {{name}}'s education?</label>
 
-    <table class="table">
-      <tbody>
 
-        {{#each children}}
-          <tr>
-            <td>
-              {{input type="text" placeholder="Name" value=name class="form-control"}}
-            </td>
-            <td>
-              {{input type="number" placeholder="Age" value=age class="form-control"}}
-            </td>
-            <td>
-              {{currency-input class="form-control" placeholder="savings amount" unformatted=saved}}
-            </td>
-          </tr>
-          {{#if hasSaved}}
-              <tr>
-                <td colspan="3">
-                  <label>Where is the money being saved?</label>
-                  {{view Ember.Select
-                  content=controller.moneyLocations
-                  value=location
-                  optionValuePath="contenet.id"
-                  optionLabelPath="content.label"
-                  class="form-control"
-                  }}
-                </td>
-              </tr>
-          {{/if}}
-        {{/each}}
-      </tbody>
-    </table>
+      <div class="radio">
+        <label>
+          {{radio-button value='0' checked=savedOption}}
+          I haven’t saved anything for {{name}}
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          {{radio-button value='exactAmount' checked=savedOption}}
+          I know exactly the amount I have saved
+        </label>
+      </div>
+      {{#if exactAmount}}
+        {{currency-input class="form-control" placeholder="savings amount" unformatted=saved}}
+      {{/if}}
+
+      <div class="radio">
+        <label>
+          {{radio-button value='2000' checked=savedOption}}
+          Less than $5,000
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          {{radio-button value='7500' checked=savedOption}}
+          $5,000-$10,000
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          {{radio-button value='12500' checked=savedOption}}
+          $10,000-$15,000
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          {{radio-button value='17500' checked=savedOption}}
+          $15,000-$20,000
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          {{radio-button value='multipleKids' checked=savedOption}}
+          I have multiple kids, and I don’t have my college savings broken out by each child.
+          I know the total value for how much we’ve saved for all of our kids.
+        </label>
+      </div>
+    </div>
+
+    {{#if hasSaved}}
+      <div class="form-group">
+        <label>Where is the money being saved?</label>
+        {{view Ember.Select
+        content=controller.moneyLocations
+        value=location
+        optionValuePath="content.id"
+        optionLabelPath="content.label"
+        class="form-control"
+        }}
+      </div>
+    {{/if}}
 
   {{/if}}
 
-  <div class="form-group">
-    <div class="btn btn-default" {{action 'addChild'}}>Add Child</div>
-  </div>
 
-  <br/>
-  <br/>
   <div class="form-group">
-    <div class="btn btn-success" {{action 'save'}}>Continue...</div>
+    <div class="btn btn-success" {{action 'save'}}>Only plan for one child</div>
+    <div class="btn btn-success" {{action 'save'}}>Add another child</div>
   </div>
 </form>
