@@ -9,11 +9,11 @@ Router.map ->
   @route 'logout'
   @route 'forgot-password'
 
-  @route 'setup/identity'
-  @route 'setup/verify-records'
-  @route 'setup/goals'
-
-  @resource 'goal', {path: 'setup/goals/:goal_id'}
+  @resource 'setup', path: 'setup', ->
+    @route 'identity'
+    @route 'verify-records'
+    @route 'goals'
+    @resource 'goal', {path: 'goals/:goal_id'}
 
   @route 'dashboard'
 

@@ -8,7 +8,7 @@ CustomAuthenticator = Base.extend
       return id: user.id
 
   invalidate: ->
-    Kinvey.getActiveUser()?.logout()
+    Kinvey.getActiveUser()?.logout({force: true})
 
   restore: ->
     return new Ember.RSVP.Promise (resolve, reject)->
