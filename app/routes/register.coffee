@@ -11,7 +11,13 @@ Route = Ember.Route.extend RouteOnlyInsecure,
       password = @controller.get 'password'
       @controller.set 'password', null
 
-      Kinvey.getActiveUser().logout({ force: true }).then =>
+      cleanupUser = new Ember.RSVP.Promise (resolve, reject)->
+        if Kinvey.getActiveUser()?
+          resolve Kinvey.getActiveUser().logout({ force: true })
+        else
+          resolve()
+
+      cleanupUser.then =>
         Kinvey.User.signup
           email: email
           username: email
