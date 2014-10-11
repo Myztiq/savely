@@ -11,21 +11,23 @@ Route = Ember.Route.extend RouteOnlyInsecure,
       password = @controller.get 'password'
       @controller.set 'password', null
 
-      Kinvey.User.signup
-        email: email
-        username: email
-        password: password
-      .then =>
-        @controller.set 'isProcessing', false
-        @get('session').authenticate 'authenticator:custom',
+      Kinvey.getActiveUser().logout({ force: true }).then =>
+        Kinvey.User.signup
           email: email
+          username: email
           password: password
         .then =>
-          @transitionTo 'index'
+          Kinvey.getActiveUser().logout().then =>
+
+            @controller.set 'isProcessing', false
+            @get('session').authenticate 'authenticator:custom',
+              email: email
+              password: password
+            .then =>
+              @transitionTo 'index'
 
       .catch (error)=>
-        console.log error
         @controller.set 'isProcessing', false
-        @controller.set 'error', error
+        @controller.set 'error', error.description
 
 `export default Route`
