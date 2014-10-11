@@ -1,7 +1,5 @@
 <h2>{{label}}</h2>
 
-<p>Let's get your college saving off to a good start.</p>
-
 <form>
   <div class="form-group">
     <div class="btn btn-default" {{action 'addChild'}}>Add Child</div>
@@ -19,7 +17,7 @@
       </div>
       <div class="form-group">
         <label>How much have you saved for {{name}}?</label>
-        {{input type="number" placeholder="0" value=saved class="form-control"}}
+        {{currency-input class="form-control" placeholder="savings amount" unformatted=saved}}
       </div>
 
       {{#if hasSaved}}

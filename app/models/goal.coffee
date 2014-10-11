@@ -2,12 +2,14 @@
 
 Goals = DS.Model.extend
   label: DS.attr('string')
-  enabled: DS.attr('boolean')
+  selected: DS.attr('boolean')
   disabled: DS.attr('boolean')
+  completed: false
+  hidden: DS.attr()
 
 Goals.reopenClass
   FIXTURES: [
-    {id: 'retirement', label: 'Retirement', disabled: true, enabled: true}
+    {id: 'retirement', label: 'Retirement', disabled: true, selected: true}
     {id: 'car', label: 'New car'}
     {id: 'wedding', label: 'Wedding fund'}
     {id: 'home', label: 'New home purchase'}
@@ -19,6 +21,7 @@ Goals.reopenClass
     {id: 'endowment', label: 'Saving money to pass on to younger generations'}
     {id: 'wealth', label: 'Build wealth'}
     {id: 'other', label: 'Other goal(s)'}
+    {id: 'emergency-funds', label: 'Emergency Funds', hidden: true, selected: true}
   ]
 
 

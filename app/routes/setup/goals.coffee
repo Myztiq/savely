@@ -12,7 +12,7 @@ Route = Ember.Route.extend
 
   actions:
     save: ->
-      firstGoal = @controller.get('model').filterBy('enabled', true).get 'firstObject'
+      firstGoal = @controller.get('model').filterBy('selected', true).filterBy('completed', false).get('firstObject')
       if firstGoal?
         @transitionTo 'goal', firstGoal
       else

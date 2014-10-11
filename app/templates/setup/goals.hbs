@@ -6,11 +6,13 @@
   What would you like to save for?
   <br/>
   {{#each}}
-    <label>
-      {{input type="checkbox" checked=enabled disabled=disabled}}
-      {{label}}
-    </label>
-    <br/>
+      {{#unless hidden}}
+        <label>
+          {{input type="checkbox" checked=selected disabled=disabled}}
+          {{label}}
+        </label>
+        <br/>
+      {{/unless}}
   {{/each}}
   {{input type="submit" class="btn btn-success" value="Continue..."}}
 </form>

@@ -18,12 +18,14 @@ Route = Ember.Route.extend
 
   actions:
     save: ->
-      @controller.set('model.enabled', false)
+      @controller.set('model.completed', true)
       @store.find('goal').then (goals)=>
-        goal = goals.filterBy('enabled', true).get('firstObject')
+        goal = goals.filterBy('completed', false).filterBy('selected', true).get('firstObject')
         if goal?
           @transitionTo 'goal', goal
-        else
+        else if @controller.get('model.id') == 'emergency-funds'
           @transitionTo 'dashboard'
+        else
+          @transitionTo 'goal', goals.findBy('id', 'emergency-funds')
 
 `export default Route`

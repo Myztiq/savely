@@ -1,0 +1,46 @@
+<h2>Emergency Funds</h2>
+
+<form>
+
+  <div class="form-group">
+    <label>
+      Do you have an emergency savings fund to pay the bills for six months if you lost your job? Say for unexpected medical bills or if you lose your job?
+    </label>
+
+
+    <div class="radio">
+      <label>
+        {{radio-button value='yes' checked=purchaseDate}}
+        Yes
+      </label>
+    </div>
+
+    <div class="radio">
+      <label>
+        {{radio-button value='no' checked=purchaseDate}}
+        No
+      </label>
+    </div>
+
+    <div class="radio">
+      <label>
+        {{radio-button value='savings' checked=purchaseDate}}
+        I’ve got some spare cash in my checking or saving account, but not a specific emergency savings fund.
+      </label>
+    </div>
+
+    <div class="radio">
+      <label>
+        {{radio-button value='notSure' checked=purchaseDate}}
+        Not Sure
+      </label>
+    </div>
+
+  </div>
+
+  <div class="form-group">
+    <div class="btn btn-success" {{action 'save'}}>Continue...</div>
+  </div>
+</form>
+
+
