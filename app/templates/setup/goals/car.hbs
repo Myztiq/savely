@@ -44,31 +44,21 @@
         5 Years
       </label>
     </div>
-
-
-    {{purchaseDate}}
-
-    <span class="help-block">The current average retirement age is 65.</span>
+    {{#if isDate}}
+      DATE PICKER GOES HERE
+    {{/if}}
   </div>
 
+  <div class="form-group">
+    <label>How much money do you expect you’ll need?</label>
+    {{input type="number" class="form-control" placeholder="3000" value=purchasePrice}}
+    <span class="help-block">We recommend a 10-20% down payment. The average down payment is $3,000.</span>
+  </div>
 
-
-
-
-  <!--How much money do you expect you’ll need?-->
-  <!--I’m not sure how much I’ll need, I just know I need to start saving-->
-  <!--I know the car I’d like to purchase costs $(enter value here)-->
-  <!--We recommend a 10-20% down payment-->
-  <!--Enter specific value-->
-
-
-  <!--How much have you saved for this goal already?-->
-  <!--I haven’t saved anything for it-->
-  <!--Enter specific value-->
-  <!--Range values that appear depend on what they said for the car-->
-
-
-
+  <div class="form-group">
+    <label>How much have you saved for this goal already?</label>
+    {{input type="number" class="form-control" placeholder="200" value=savings}}
+  </div>
 
   <div class="form-group">
     <div class="btn btn-success" {{action 'save'}}>Continue...</div>
