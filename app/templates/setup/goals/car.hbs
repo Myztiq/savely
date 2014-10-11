@@ -1,0 +1,74 @@
+<h2>{{label}}</h2>
+
+<p>Get that new car quicker.</p>
+
+<form>
+
+
+  <div class="form-group">
+    <label>When do you plan on buying a new car?</label>
+
+    <div class="radio">
+      <label>
+        {{radio-button value='date' checked=purchaseDate}}
+        I have a specific date
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+        {{radio-button value='unsure' checked=purchaseDate}}
+        I’m not sure when, I just know I need to start saving
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+        {{radio-button value='6months' checked=purchaseDate}}
+        6 Months
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+        {{radio-button value='1year' checked=purchaseDate}}
+        1 Year
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+        {{radio-button value='2years' checked=purchaseDate}}
+        2 Years
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+        {{radio-button value='5years' checked=purchaseDate}}
+        5 Years
+      </label>
+    </div>
+    {{purchaseDate}}
+
+    <span class="help-block">The current average retirement age is 65.</span>
+  </div>
+
+
+
+
+
+  <!--How much money do you expect you’ll need?-->
+  <!--I’m not sure how much I’ll need, I just know I need to start saving-->
+  <!--I know the car I’d like to purchase costs $(enter value here)-->
+  <!--We recommend a 10-20% down payment-->
+  <!--Enter specific value-->
+
+
+  <!--How much have you saved for this goal already?-->
+  <!--I haven’t saved anything for it-->
+  <!--Enter specific value-->
+  <!--Range values that appear depend on what they said for the car-->
+
+
+
+
+  <div class="form-group">
+    <div class="btn btn-success" {{action 'save'}}>Continue...</div>
+  </div>
+</form>
