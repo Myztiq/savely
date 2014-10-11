@@ -24,7 +24,7 @@ Route = Ember.Route.extend
         if goal?
           @transitionTo 'goal', goal
         else if @controller.get('model.id') == 'emergency-funds'
-          @transitionTo 'dashboard'
+          @transitionTo 'setup.plan'
         else
           @transitionTo 'goal', goals.findBy('id', 'emergency-funds')
 

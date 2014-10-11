@@ -11,6 +11,8 @@ Router.map ->
 
   @resource 'setup', path: 'setup', ->
     @route 'identity'
+    @route 'plan'
+    @route 'account'
     @route 'verify-records'
     @route 'goals'
     @resource 'goal', {path: 'goals/:goal_id'}

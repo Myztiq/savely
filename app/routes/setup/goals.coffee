@@ -13,9 +13,6 @@ Route = Ember.Route.extend
   actions:
     save: ->
       firstGoal = @controller.get('model').filterBy('selected', true).filterBy('completed', false).get('firstObject')
-      if firstGoal?
-        @transitionTo 'goal', firstGoal
-      else
-        @transitionTo 'dashboard'
+      @transitionTo 'goal', firstGoal
 
 `export default Route`
