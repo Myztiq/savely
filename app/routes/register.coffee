@@ -12,6 +12,7 @@ Route = Ember.Route.extend RouteOnlyInsecure,
       @controller.set 'password', null
 
       Kinvey.User.signup
+        email: email
         username: email
         password: password
       .then =>
