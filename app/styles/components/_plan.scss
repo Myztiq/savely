@@ -1,0 +1,26 @@
+#plan{
+  > div{
+    padding: 10px;
+    text-align: center;
+    background-color: rgba(175,230,251, .2);
+    margin: 10px;
+    box-shadow: 0px 0px 5px 0px rgba(66,108,130,.2) inset;
+  }
+
+  .paycheck{
+    width: 40%;
+    margin-left: 30%;
+    .salary{
+      font-size: 30px;
+    }
+  }
+  .goal-allocation{
+    width: 40%;
+    margin-left: 30%;
+  }
+
+  .short-term, .long-term, .retirement{
+    width: calc(33.33% - 20px);
+    float: left;
+  }
+}
