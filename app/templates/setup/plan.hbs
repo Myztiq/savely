@@ -1,7 +1,42 @@
 <h2>Your Plan</h2>
 
+<p>Get your paycheck allocations setup. You can change this anytime you want.</p>
 
-$3,000 paycheck every two weeks
+<div id="plan">
+  <div class="paycheck">
+    <div class="salary">$3,000</div>
+    paycheck every two weeks
+  </div>
+  <div class="goal-allocation">
+    {{paycheckAllocationPercentage}}%
+    {{range-input min="0" max="100" step="0.1" value=paycheckAllocationPercentage}}
+    {{currency-input unformatted=paycheckAllocationDollars}}
+  </div>
+
+  <div class="short-term">
+    Short term goals
+    {{shortTermPercentage}}%
+    {{range-input min="0" max="100" step="0.1" value=shortTermPercentage}}
+    {{currency-input unformatted=shortTermDollars}}
+  </div>
+
+  <div class="long-term">
+    Long term goals
+    {{longTermPercentage}}%
+    {{range-input min="0" max="100" step="0.1" value=longTermPercentage}}
+    {{currency-input unformatted=longTermDollars}}
+  </div>
+
+  <div class="retirement">
+    Saving for retirement
+
+    {{retirementPercentage}}%
+    {{range-input min="0" max="100" step="0.1" value=retirementPercentage}}
+    {{currency-input unformatted=retirementDollars}}
+  </div>
+</div>
+
+
 
 10%  $xxx
 Towards Goals

@@ -1,14 +1,22 @@
-currencyInput = Ember.TextField.extend
+CurrencyInput = Ember.TextField.extend
   unformatted: null
+
+  unformattedWatcher: (->
+    @set 'value', @get 'unformatted'
+  ).observes 'unformatted'
 
   value: ((key, value)->
     if value?
       @set 'unformatted', accounting.unformat value
 
     if @get('unformatted')
-      accounting.formatMoney @get('unformatted'), precision: 0
+      unformatted = @get('unformatted')
+      precision = 0
+      if "#{unformatted}".indexOf('.') > -1
+        precision = 2
+      accounting.formatMoney @get('unformatted'), precision: precision
     else
       return
   ).property()
 
-`export default currencyInput`
+`export default CurrencyInput`
