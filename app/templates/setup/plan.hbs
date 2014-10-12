@@ -21,7 +21,13 @@
 
     <br/>
     <br/>
-    Car Purchase
+    <div class="savings-item">
+      <div class="title">Car Purchase in 2015</div>
+      <div class="details">$0 saved / $3,000 needed</div>
+      <div class="savings">
+        <span class="amount">{{format-money shortTermDollars}}</span> / paycheck
+      </div>
+    </div>
   </div>
 
   <div class="long-term">
@@ -32,10 +38,24 @@
 
     <br/>
     <br/>
-    Tim College
-    <br/>
 
-    Samantha College
+    <div class="savings-item tim">
+      <div class="title">College for Tim in 2015</div>
+      {{range-input min="0" max="100" step="0.1" value=timPercentage}}
+      <div class="details">$20,000 saved / $24,000 needed</div>
+      <div class="savings">
+        <span class="amount">{{format-money timDollars}}</span> / paycheck
+      </div>
+    </div>
+
+    <div class="savings-item samantha">
+      <div class="title">College for Samantha in 2023</div>
+      {{range-input min="0" max="100" step="0.1" value=samanthaPercentage}}
+      <div class="details">$500 saved / $27,000 needed</div>
+      <div class="savings">
+        <span class="amount">{{format-money samanthaDollars}}</span> / paycheck
+      </div>
+    </div>
 
   </div>
 
@@ -45,11 +65,6 @@
     {{retirementPercentage}}%
     {{range-input min="0" max="100" step="0.1" value=retirementPercentage}}
     {{currency-input unformatted=retirementDollars}}
-
-    <br/>
-    <br/>
-
-    401k Account
   </div>
 
 

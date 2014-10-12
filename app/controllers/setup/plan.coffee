@@ -50,25 +50,37 @@ boundPercentageComputed = (storage, boundPercentages...)->
 Controller = Ember.Controller.extend
   paycheckAmount: 3000
 
-  paycheckAllocationPercentage: 0
+  paycheckAllocationPercentage: 15
   _paycheckAllocationDollars: 0
   paycheckAllocationDollars: dollarSliderComputed 'paycheckAmount', 'paycheckAllocationPercentage', '_paycheckAllocationDollars'
 
-  _shortTermPercentage: 40
+  _shortTermPercentage: 25
   shortTermPercentage: boundPercentageComputed '_shortTermPercentage', '_longTermPercentage', '_retirementPercentage'
 
   _shortTermDollars: 0
   shortTermDollars: dollarSliderComputed 'paycheckAllocationDollars', 'shortTermPercentage', '_shortTermDollars'
   
-  _longTermPercentage: 40
+  _longTermPercentage: 25
   longTermPercentage: boundPercentageComputed '_longTermPercentage', '_shortTermPercentage', '_retirementPercentage'
   _longTermDollars: 0
   longTermDollars: dollarSliderComputed 'paycheckAllocationDollars', 'longTermPercentage', '_longTermDollars'
   
-  _retirementPercentage: 20
+  _retirementPercentage: 50
   retirementPercentage: boundPercentageComputed '_retirementPercentage', '_shortTermPercentage', '_longTermPercentage'
   _retirementDollars: 0
   retirementDollars: dollarSliderComputed 'paycheckAllocationDollars', 'retirementPercentage', '_retirementDollars'
+
+
+  _samanthaPercentage: 70
+  samanthaPercentage: boundPercentageComputed '_samanthaPercentage', '_timPercentage'
+  _samanthaDollars: 0
+  samanthaDollars: dollarSliderComputed 'longTermDollars', '_samanthaPercentage', '_samanthaDollars'
+
+  _timPercentage: 30
+  timPercentage: boundPercentageComputed '_timPercentage', '_samanthaPercentage'
+  
+  _timDollars: 0
+  timDollars: dollarSliderComputed 'longTermDollars', 'timPercentage', '_timDollars'
 
 
 
