@@ -65,6 +65,14 @@
     {{retirementPercentage}}%
     {{range-input min="0" max="100" step="0.1" value=retirementPercentage}}
     {{currency-input unformatted=retirementDollars}}
+
+    {{#if warnTooLow}}
+      <br/>
+      <br/>
+      <div class="bg-danger">
+        We recommend you put at least 15% of your savings contribution towards retirement, otherwise you may fall behind your goals.
+      </div>
+    {{/if}}
   </div>
 
 

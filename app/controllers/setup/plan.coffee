@@ -82,6 +82,7 @@ Controller = Ember.Controller.extend
   _timDollars: 0
   timDollars: dollarSliderComputed 'longTermDollars', 'timPercentage', '_timDollars'
 
+  warnTooLow: Ember.computed.lt '_retirementPercentage', 15
 
 
 
