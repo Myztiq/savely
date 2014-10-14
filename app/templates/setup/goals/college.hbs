@@ -80,8 +80,16 @@
   {{/if}}
 
 
-  <div class="form-group">
-    <div class="btn btn-success" {{action 'save'}}>Only plan for one child</div>
-    <div class="btn btn-success" {{action 'save'}}>Add another child</div>
-  </div>
+  {{#if name}}
+    <div class="form-group">
+      <div class="btn btn-success" {{action 'save'}}>
+        {{#if hasAddedAChild}}
+          Continue...
+        {{else}}
+          Only plan for one child
+        {{/if}}
+      </div>
+      <div class="btn btn-success" {{action 'addChild'}}>Add another child</div>
+    </div>
+  {{/if}}
 </form>

@@ -1,14 +1,8 @@
 `import Ember from 'ember'`
 
-Child = Ember.Object.extend
-
-  hasSaved: (->
-    @get('saved') > 0
-  ).property 'saved'
-
 Controller = Ember.ObjectController.extend
   canContinue: false
-  children: []
+  hasAddedAChild: false
   moneyLocations: [
     {
       label:"In a checking, savings or CD account"
@@ -28,8 +22,14 @@ Controller = Ember.ObjectController.extend
     }
   ]
 
+  exactAmount: Ember.computed.equal 'savedOption', 'exactAmount'
+
   actions:
     addChild: ->
-      @get('children').addObject(new Child())
+      @set 'hasAddedAChild', true
+      @set 'name', null
+      @set 'savedOption', null
+      @set 'age', null
+      @set 'location', null
 
 `export default Controller`
