@@ -62,6 +62,21 @@ Controller = Ember.Controller.extend
 
   _shortTermDollars: 0
   shortTermDollars: dollarSliderComputed 'paycheckAllocationDollars', 'shortTermPercentage', '_shortTermDollars'
+
+
+
+  _emergencyPercentage: 70
+  emergencyPercentage: boundPercentageComputed '_emergencyPercentage', '_carPercentage'
+  _emergencyDollars: 0
+  emergencyDollars: dollarSliderComputed 'longTermDollars', '_emergencyPercentage', '_emergencyDollars'
+
+  _carPercentage: 30
+  carPercentage: boundPercentageComputed '_carPercentage', '_emergencyPercentage'
+
+  _carDollars: 0
+  carDollars: dollarSliderComputed 'longTermDollars', 'carPercentage', '_carDollars'
+  
+  
   
   _longTermPercentage: 25
   longTermPercentage: boundPercentageComputed '_longTermPercentage', '_shortTermPercentage', '_retirementPercentage'

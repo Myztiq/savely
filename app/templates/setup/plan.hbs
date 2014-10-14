@@ -34,9 +34,18 @@
     <br/>
     <div class="savings-item">
       <div class="title">Car Purchase in 2015</div>
+      {{range-input min="0" max="100" step="0.1" value=carPercentage}}
       <div class="details">$0 saved / $3,000 needed</div>
       <div class="savings">
-        <span class="amount">{{format-money shortTermDollars}}</span> / paycheck
+        <span class="amount">{{format-money carDollars}}</span> / paycheck
+      </div>
+    </div>
+    <div class="savings-item">
+      <div class="title">Emergency Savings</div>
+      {{range-input min="0" max="100" step="0.1" value=emergencyPercentage}}
+      <div class="details">$0 saved / $15,000 needed</div>
+      <div class="savings">
+        <span class="amount">{{format-money emergencyDollars}}</span> / paycheck
       </div>
     </div>
   </div>
