@@ -51,6 +51,9 @@ Controller = Ember.Controller.extend
   paycheckAmount: 3000
 
   paycheckAllocationPercentage: 15
+
+  tooLowAllocation: Ember.computed.lt 'paycheckAllocationPercentage', 10
+
   _paycheckAllocationDollars: 0
   paycheckAllocationDollars: dollarSliderComputed 'paycheckAmount', 'paycheckAllocationPercentage', '_paycheckAllocationDollars'
 
@@ -70,6 +73,8 @@ Controller = Ember.Controller.extend
   _retirementDollars: 0
   retirementDollars: dollarSliderComputed 'paycheckAllocationDollars', 'retirementPercentage', '_retirementDollars'
 
+  warnTooLowRetirement: Ember.computed.lt '_retirementDollars', 50
+
 
   _samanthaPercentage: 70
   samanthaPercentage: boundPercentageComputed '_samanthaPercentage', '_timPercentage'
@@ -82,7 +87,7 @@ Controller = Ember.Controller.extend
   _timDollars: 0
   timDollars: dollarSliderComputed 'longTermDollars', 'timPercentage', '_timDollars'
 
-  warnTooLow: Ember.computed.lt '_retirementPercentage', 15
+
 
 
 

@@ -11,6 +11,17 @@
     {{paycheckAllocationPercentage}}% of paycheck towards goals
     {{range-input min="0" max="100" step="0.1" value=paycheckAllocationPercentage}}
     {{currency-input unformatted=paycheckAllocationDollars}}
+
+    {{#if tooLowAllocation}}
+      <br/>
+      <br/>
+      We know budgets are tight and saving can be hard. But we think you need to save more to accomplish your financial goals. How about you ease into it? Would you mind if we automatically raised your contributions it by $5.50 every two weeks for a year?
+      <br/>
+      <br/>
+      <div class="btn btn-primary">Yes, set up small automatic increases</div>
+      <div class="btn btn-default">No thanks</div>
+    {{/if}}
+
   </div>
 
   <div class="short-term">
@@ -66,11 +77,11 @@
     {{range-input min="0" max="100" step="0.1" value=retirementPercentage}}
     {{currency-input unformatted=retirementDollars}}
 
-    {{#if warnTooLow}}
+    {{#if warnTooLowRetirement}}
       <br/>
       <br/>
       <div class="bg-danger">
-        We recommend you put at least 15% of your savings contribution towards retirement, otherwise you may fall behind your goals.
+        We noticed that you’ve lowered your retirement savings to the point where you’re not maximizing your employer match. Employer matches are free money! We strongly recommend you save at least enough to maximize the amount of free money you get from your employer.
       </div>
     {{/if}}
   </div>
@@ -78,4 +89,4 @@
 
 </div>
 
-{{#link-to 'setup.account'}}<div class="btn btn-success">Save</div>{{/link-to}}
+{{#link-to 'setup.account-short-term'}}<div class="btn btn-success">Save</div>{{/link-to}}

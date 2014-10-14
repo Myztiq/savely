@@ -1,0 +1,22 @@
+<h2>Your Account</h2>
+
+<div class="form-group">
+  <label>It looks like you’ve already started investing in a brokerage account for your College goal. How would you like us to approach this goal?</label>
+  <div class="radio">
+    <label>
+      {{radio-button value='directDeposit' checked=longTermLocation}}
+      I’d like use a Dream Forward brokerage account just for my financial goals, automatically deducing the right amount of money from each paycheck.
+    </label>
+  </div>
+  <div class="radio">
+    <label>
+      {{radio-button value='personal' checked=longTermLocation}}
+      Just keep it in my personal saving map, but don’t deduct from my paycheck. I’ll handle it.
+    </label>
+  </div>
+</div>
+{{#if warnSavingsLocation}}
+  <div class="help-block bg-warning">We recommend you have a separate brokerage account for your financial goals so you’re not tempted to try to be a stock trader and beat the market.</div>
+{{/if}}
+
+{{#link-to 'dashboard'}}<div class="btn btn-success">Save</div>{{/link-to}}
