@@ -17,5 +17,8 @@ Route = Ember.Route.extend RouteOnlyInsecure,
         password: password
       .then =>
         @transitionTo 'index'
+      , (err)=>
+        @controller.set 'error', err.description
+
 
 `export default Route`

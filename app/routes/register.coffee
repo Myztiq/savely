@@ -11,7 +11,7 @@ Route = Ember.Route.extend RouteOnlyInsecure,
       password = @controller.get 'password'
       @controller.set 'password', null
 
-      cleanupUser = new Ember.RSVP.Promise (resolve, reject)->
+      cleanupUser = new Ember.RSVP.Promise (resolve)->
         if Kinvey.getActiveUser()?
           resolve Kinvey.getActiveUser().logout({ force: true })
         else
@@ -34,6 +34,6 @@ Route = Ember.Route.extend RouteOnlyInsecure,
 
       .catch (error)=>
         @controller.set 'isProcessing', false
-        @controller.set 'error', error.description
+        @controller.set 'error', error.errors.description
 
 `export default Route`
