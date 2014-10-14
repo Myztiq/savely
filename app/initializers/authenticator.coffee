@@ -6,12 +6,14 @@ CustomAuthenticator = Base.extend
     cleanupUser = new Ember.RSVP.Promise (resolve)->
       if Kinvey.getActiveUser()?
         resolve Kinvey.getActiveUser().logout({ force: true })
+        console.log 'Had to cleanup user on login'
       else
         resolve()
 
-    cleanupUser.then =>
+    cleanupUser.then ->
       Kinvey.User.login(options.email, options.password)
       .then (user)->
+        console.log 'Logged User In'
         return id: user.id
 
   invalidate: ->
@@ -21,8 +23,10 @@ CustomAuthenticator = Base.extend
     return new Ember.RSVP.Promise (resolve, reject)->
       user = Kinvey.getActiveUser()
       if user?.id
+        console.log 'Found existing user to restore'
         resolve()
       else
+        console.log 'No active user found'
         reject()
 
 Initializer =
