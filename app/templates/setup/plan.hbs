@@ -87,15 +87,32 @@
 
 </div>
 
-
+<div class="modal fade" id="tooLowModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">Investment Warning</h4>
+      </div>
+      <div class="modal-body">
+        <p>We know budgets are tight and saving can be hard. But we think you need to save more to accomplish your financial goals. How about you ease into it? Would you mind if we automatically raised your contributions it by $5.50 every two weeks for a year?</p>
+      </div>
+      <div class="modal-footer">
+        {{#link-to 'setup.account-short-term'}}
+          <div class="btn btn-primary" data-dismiss="modal">Yes, set up small automatic increases</div>
+        {{/link-to}}
+        {{#link-to 'setup.account-short-term'}}
+          <div class="btn btn-default" data-dismiss="modal">No thanks</div>
+        {{/link-to}}
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 {{#if tooLowAllocation}}
-  <br/>
-  <br/>
-  We know budgets are tight and saving can be hard. But we think you need to save more to accomplish your financial goals. How about you ease into it? Would you mind if we automatically raised your contributions it by $5.50 every two weeks for a year?
-  <br/>
-  <br/>
-  <div class="btn btn-primary">Yes, set up small automatic increases</div>
-  <div class="btn btn-default">No thanks</div>
-{{/if}}
+  <button class="btn btn-success" data-toggle="modal" data-target="#tooLowModal">
+    Save
+  </button>
 
-{{#link-to 'setup.account-short-term'}}<div class="btn btn-success">Save</div>{{/link-to}}
+{{else}}
+  {{#link-to 'setup.account-short-term'}}<div class="btn btn-success">Save</div>{{/link-to}}
+{{/if}}
