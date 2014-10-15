@@ -1,10 +1,12 @@
+<h2>Tell Us About Your Goals</h2>
 <p>
   Outside of retirement, select any financial goals that you are currently saving for or would like to start saving for. Even if you’ve already saving for it elsewhere, make sure you add it here so we have a complete picture of your financial goals.
 </p>
 
 <form {{action 'save' on='submit'}}>
-  What would you like to save for?
+  <label style="margin-bottom: 10px;">What would you like to save for?</label>
   <br/>
+
   {{#each}}
       {{#unless hidden}}
         <label>
@@ -14,5 +16,7 @@
         <br/>
       {{/unless}}
   {{/each}}
+  <br/>
   {{input type="submit" class="btn btn-success" value="Continue..."}}
+
 </form>

@@ -11,11 +11,12 @@ Router.map ->
 
   @resource 'setup', path: 'setup', ->
     @route 'identity'
+    @route 'verify-records'
+    @route 'goals'
     @route 'plan'
     @route 'account-long-term'
     @route 'account-short-term'
-    @route 'verify-records'
-    @route 'goals'
+    @route 'investment'
     @resource 'goal', {path: 'goals/:goal_id'}
 
   @route 'dashboard'

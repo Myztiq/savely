@@ -1,4 +1,4 @@
-<h2>Your Account</h2>
+<h2>Invest for Long-Term Goals</h2>
 
 <p>It looks like you’ve already started investing for your <b>College</b> goal. Given that this is a long-term goal, the best way to save for this would be to invest in the stock market.</p>
 
@@ -18,7 +18,8 @@
   </div>
 </div>
 {{#if warnSavingsLocation}}
-  <div class="help-block bg-warning">We recommend you have a separate brokerage account for your financial goals so you’re not tempted to try to be a stock trader and beat the market.</div>
+  <div class="text-danger">Note: We recommend you have a separate brokerage account for your financial goals so you’re not tempted to try to be a stock trader and beat the market.</div>
+  <br/>
 {{/if}}
 
-{{#link-to 'dashboard'}}<div class="btn btn-success">Save</div>{{/link-to}}
+{{#link-to 'setup.investment'}}<div class="btn btn-success">Save</div>{{/link-to}}

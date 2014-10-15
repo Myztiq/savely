@@ -3,6 +3,7 @@
 Controller = Ember.ObjectController.extend
   canContinue: false
   hasAddedAChild: false
+  previousChildName: null
   moneyLocations: [
     {
       label:"In a checking, savings or CD account"
@@ -26,6 +27,7 @@ Controller = Ember.ObjectController.extend
 
   actions:
     addChild: ->
+      @set 'previousChildName', @get 'name'
       @set 'hasAddedAChild', true
       @set 'name', null
       @set 'savedOption', null

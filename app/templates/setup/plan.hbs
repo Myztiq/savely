@@ -8,24 +8,13 @@
     paycheck every <b>two weeks</b>
   </div>
   <div class="goal-allocation">
-    {{paycheckAllocationPercentage}}% of paycheck towards goals
+    {{paycheckAllocationPercentage}}% of paycheck towards goals {{#if paycheckAllocationIsRecommended}}(recommended){{/if}}
     {{range-input min="0" max="100" step="0.1" value=paycheckAllocationPercentage}}
     {{currency-input unformatted=paycheckAllocationDollars}}
-
-    {{#if tooLowAllocation}}
-      <br/>
-      <br/>
-      We know budgets are tight and saving can be hard. But we think you need to save more to accomplish your financial goals. How about you ease into it? Would you mind if we automatically raised your contributions it by $5.50 every two weeks for a year?
-      <br/>
-      <br/>
-      <div class="btn btn-primary">Yes, set up small automatic increases</div>
-      <div class="btn btn-default">No thanks</div>
-    {{/if}}
-
   </div>
 
   <div class="short-term">
-    Short term goals
+    Short Term Goals
     {{shortTermPercentage}}%
     {{range-input min="0" max="100" step="0.1" value=shortTermPercentage}}
     {{currency-input unformatted=shortTermDollars}}
@@ -51,7 +40,7 @@
   </div>
 
   <div class="long-term">
-    Long term goals
+    Long Term Goals
     {{longTermPercentage}}%
     {{range-input min="0" max="100" step="0.1" value=longTermPercentage}}
     {{currency-input unformatted=longTermDollars}}
@@ -80,7 +69,7 @@
   </div>
 
   <div class="retirement">
-    Saving for retirement
+    Saving for Retirement
 
     {{retirementPercentage}}%
     {{range-input min="0" max="100" step="0.1" value=retirementPercentage}}
@@ -97,5 +86,16 @@
 
 
 </div>
+
+
+{{#if tooLowAllocation}}
+  <br/>
+  <br/>
+  We know budgets are tight and saving can be hard. But we think you need to save more to accomplish your financial goals. How about you ease into it? Would you mind if we automatically raised your contributions it by $5.50 every two weeks for a year?
+  <br/>
+  <br/>
+  <div class="btn btn-primary">Yes, set up small automatic increases</div>
+  <div class="btn btn-default">No thanks</div>
+{{/if}}
 
 {{#link-to 'setup.account-short-term'}}<div class="btn btn-success">Save</div>{{/link-to}}

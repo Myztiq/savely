@@ -1,4 +1,4 @@
-<h2>{{label}}</h2>
+<h2>New Car</h2>
 
 <form>
   <div class="form-group">
@@ -7,7 +7,7 @@
     <div class="radio">
       <label>
         {{radio-button value='date' checked=purchaseDate}}
-        I have a specific date
+        I have a specific date in mind
       </label>
     </div>
     <div class="radio">
@@ -19,29 +19,29 @@
     <div class="radio">
       <label>
         {{radio-button value='6months' checked=purchaseDate}}
-        6 Months
+        6 months
       </label>
     </div>
     <div class="radio">
       <label>
         {{radio-button value='1year' checked=purchaseDate}}
-        1 Year
+        1 year
       </label>
     </div>
     <div class="radio">
       <label>
         {{radio-button value='2years' checked=purchaseDate}}
-        2 Years
+        2 years
       </label>
     </div>
     <div class="radio">
       <label>
         {{radio-button value='5years' checked=purchaseDate}}
-        5 Years
+        5 years
       </label>
     </div>
     {{#if isDate}}
-      DATE PICKER GOES HERE
+      <!--DATE PICKER GOES HERE-->
     {{/if}}
   </div>
 
@@ -70,7 +70,7 @@
     <div class="radio">
       <label>
         {{radio-button value='knownValue' checked=paymentType}}
-        Enter specific value
+        Enter a specific down payment value
       </label>
     </div>
     {{#if knownValue}}

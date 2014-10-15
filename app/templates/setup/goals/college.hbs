@@ -1,4 +1,10 @@
-<h2>{{label}}</h2>
+<h2>College Education</h2>
+
+
+{{#if hasAddedAChild}}
+  <a href="#">Back to {{previousChildName}}'s college setup</a>
+  <br/>
+{{/if}}
 
 <form>
 
@@ -24,13 +30,20 @@
       <div class="radio">
         <label>
           {{radio-button value='exactAmount' checked=savedOption}}
-          I know exactly the amount I have saved
+          I know the exact amount I have saved
         </label>
       </div>
       {{#if exactAmount}}
         {{currency-input class="form-control" placeholder="savings amount" unformatted=saved}}
       {{/if}}
 
+      <div class="radio">
+        <label>
+          {{radio-button value='multipleKids' checked=savedOption}}
+          I have multiple kids, and I don’t have my college savings broken out by each child.
+          I know the total value for how much we’ve saved for all of our kids.
+        </label>
+      </div>
       <div class="radio">
         <label>
           {{radio-button value='2000' checked=savedOption}}
@@ -55,13 +68,6 @@
           $15,000-$20,000
         </label>
       </div>
-      <div class="radio">
-        <label>
-          {{radio-button value='multipleKids' checked=savedOption}}
-          I have multiple kids, and I don’t have my college savings broken out by each child.
-          I know the total value for how much we’ve saved for all of our kids.
-        </label>
-      </div>
     </div>
 
     {{#if hasSaved}}
@@ -77,6 +83,29 @@
       </div>
     {{/if}}
 
+
+    <div class="form-group">
+      <label>Are you thinking about sending them to a public or private school?</label>
+
+      <div class="radio">
+        <label>
+          {{radio-button value='public' checked=schoolType}}
+          Use the average cost of tuition at a public school
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          {{radio-button value='private' checked=schoolType}}
+          Use the average cost of tuition at a private school
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          {{radio-button value='manual' checked=schoolType}}
+          Enter a custom yearly cost of tuition (in 2014 dollars, we’ll adjust for inflation)
+        </label>
+      </div>
+    </div>
   {{/if}}
 
 

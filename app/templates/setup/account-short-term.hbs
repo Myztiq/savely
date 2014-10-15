@@ -1,4 +1,4 @@
-<h2>Your Account</h2>
+<h2>Manage Short-Term Goals</h2>
 
 <p>It looks like you’ve already started saving for your <b>Car Purchase</b> and <b>Emergency Savings</b> goals. These are relatively short-term goals that you should save for in a bank account.</p>
 <div class="form-group">
@@ -24,7 +24,8 @@
   </div>
 </div>
 {{#if warnSavingsLocation}}
-  <div class="help-block bg-warning">We recommend having your savings in separate account than your day-to-day checking or banking account that you use to pay bills – that way you won’t be tempted!</div>
+  <div class="text-danger">Note: We recommend having your savings in separate account than your day-to-day checking or banking account that you use to pay bills – that way you won’t be tempted!</div>
+  <br/>
 {{/if}}
 
 {{#link-to 'setup.account-long-term'}}<div class="btn btn-success">Save</div>{{/link-to}}

@@ -51,6 +51,7 @@ Controller = Ember.Controller.extend
   paycheckAmount: 3000
 
   paycheckAllocationPercentage: 15
+  paycheckAllocationIsRecommended: Ember.computed.equal 'paycheckAllocationPercentage', 15
 
   tooLowAllocation: Ember.computed.lt 'paycheckAllocationPercentage', 10
 
@@ -59,6 +60,8 @@ Controller = Ember.Controller.extend
 
   _shortTermPercentage: 25
   shortTermPercentage: boundPercentageComputed '_shortTermPercentage', '_longTermPercentage', '_retirementPercentage'
+
+
 
   _shortTermDollars: 0
   shortTermDollars: dollarSliderComputed 'paycheckAllocationDollars', 'shortTermPercentage', '_shortTermDollars'
